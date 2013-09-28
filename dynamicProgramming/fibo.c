@@ -1,15 +1,17 @@
 #include <stdio.h>
 
 int fibo(n) {
-   int retval = 1;
+   int i, tempval=1, retval = 1;
 
    // unit case 
    if (n <= 1) {
       return retval;
    }
 
-   // recursive case
-   retval = fibo(n-1) + fibo(n-2);
+   for (i=2; i<=n; i++){
+	retval += tempval;
+	tempval = retval;
+   }
    return retval;
 }
 
